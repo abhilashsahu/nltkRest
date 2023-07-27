@@ -2,9 +2,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rake_nltk import Rake
-# import json
-# import nltk
-
 
 class NLTKAPIView(APIView):
     """ Class to handle .../nltk/ endpoint POST requests """
@@ -12,8 +9,6 @@ class NLTKAPIView(APIView):
     @staticmethod
     def post(request):
         """ Method to create new project in the DB  """
-
-        # nltk.download('punkt')
 
         rake_nltk_var = Rake()
         text = request.data.get("text", None)
